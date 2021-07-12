@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   end
 
   def pdf_generator
+    @restaurants = Restaurant.all
+
     respond_to do |format|
       format.html
       format.pdf do

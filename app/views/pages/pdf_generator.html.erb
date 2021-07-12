@@ -1,13 +1,35 @@
 <div class="container my-5">
-  <h1 class="text-center">PDF - title</h1>
-  <h2 class="text-left">PDF - subtitle</h2>
+  <h1 class="text-center">All restaurants</h1>
+  <h2 class="text-left">List of restaurants</h2>
   <%= link_to "Generate test PDF", pdf_generator_path(format: :pdf), target: "_blank", rel: "noopener noreferer", class: "btn btn-primary my-3" %>
-  <ul>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque commodi tempore, officia veniam debitis facilis reiciendis error corporis laborum aliquam, ipsa voluptatibus, ad id nobis esse porro, ex illum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque commodi tempore, officia veniam debitis facilis reiciendis error corporis laborum aliquam, ipsa voluptatibus, ad id nobis esse porro, ex illum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque commodi tempore, officia veniam debitis facilis reiciendis error corporis laborum aliquam, ipsa voluptatibus, ad id nobis esse porro, ex illum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque commodi tempore, officia veniam debitis facilis reiciendis error corporis laborum aliquam, ipsa voluptatibus, ad id nobis esse porro, ex illum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque commodi tempore, officia veniam debitis facilis reiciendis error corporis laborum aliquam, ipsa voluptatibus, ad id nobis esse porro, ex illum?</li>
-    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cumque commodi tempore, officia veniam debitis facilis reiciendis error corporis laborum aliquam, ipsa voluptatibus, ad id nobis esse porro, ex illum?</li>
-  </ul>
+
+  <table class="table table-hover table-responsive text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Food type</th>
+        <th scope="col">Address</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td>
+            <%= restaurant.name %>
+          </td>
+          <td>
+            <%= restaurant.food_type %>
+          </td>
+          <td>
+            <%= restaurant.address %>
+          </td>
+          <td>
+            <%= restaurant.rating %>
+          </td>
+        </tr>
+      <% end%>
+    </tbody>
+  </table>
+
 </div>
