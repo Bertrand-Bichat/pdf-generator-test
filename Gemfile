@@ -42,6 +42,10 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+# PDF gem
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
